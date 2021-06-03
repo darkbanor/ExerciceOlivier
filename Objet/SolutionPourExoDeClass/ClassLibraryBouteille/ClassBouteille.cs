@@ -48,7 +48,13 @@ namespace ClassLibraryBouteille
                 _arajouterEnPourcentage = contenuEnPourcentage - _contenuPourcentage;
 
             }
-            
+
+            if (ouvert == false)
+            {
+                Console.WriteLine("impossible de remplir");
+
+            }
+
         }
 
         public override string ToString()
