@@ -10,6 +10,7 @@ namespace ConsoleAppMonTest
             Television laTeleDuSalon; // declatation
             laTeleDuSalon = new Television(); // initialisation par intanciation
 
+
             Television laTeleDuSalon2; // declatation
             laTeleDuSalon2 = new Television(true,20); // initialisation par intanciation
 

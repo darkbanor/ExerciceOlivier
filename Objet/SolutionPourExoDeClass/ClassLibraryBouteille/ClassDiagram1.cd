@@ -3,8 +3,8 @@
   <Class Name="ClassLibraryBouteille.Bouteille">
     <Position X="2.75" Y="0.75" Width="6.25" />
     <TypeIdentifier>
-      <HashCode>AAABAACAAACAgAAEgAAAAAAAAACAAAAAgAAAAAIAAAA=</HashCode>
-      <FileName>ClassBouteille.cs</FileName>
+      <HashCode>AAABAAAAAAAAAAAEAAAAAAAAAACAAAAAAAAAAAIAAAA=</HashCode>
+      <FileName>Bouteille.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Font Name="Segoe UI" Size="9" />

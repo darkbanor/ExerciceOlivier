@@ -9,11 +9,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ClassLibraryTelevision", "C
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Television", "Television", "{0D10EEE3-A8AF-487B-B906-245B8770693E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClassLibraryBouteille", "ClassLibraryBouteille\ClassLibraryBouteille.csproj", "{ADFD13B0-990B-48AA-A08F-78A171458FB5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ClassLibraryBouteille", "ClassLibraryBouteille\ClassLibraryBouteille.csproj", "{ADFD13B0-990B-48AA-A08F-78A171458FB5}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Bouteille", "Bouteille", "{ECB179F8-8147-494C-8374-7B59A3BD18CA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleAppBouteille", "ConsoleAppBouteille\ConsoleAppBouteille.csproj", "{8B485EA6-97F2-4EAE-AE10-EDA1AD482A2B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConsoleAppBouteille", "ConsoleAppBouteille\ConsoleAppBouteille.csproj", "{8B485EA6-97F2-4EAE-AE10-EDA1AD482A2B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
