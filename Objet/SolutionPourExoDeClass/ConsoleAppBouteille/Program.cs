@@ -10,19 +10,31 @@ namespace ConsoleAppBouteille
             Bouteille uneBouteilleDeperrier;
             uneBouteilleDeperrier = new Bouteille(1.5, 80, false);
 
-            Console.WriteLine(uneBouteilleDeperrier.ToString());                        
+            Bouteille uneBouteilleDeCola;
+            uneBouteilleDeCola = new Bouteille(2, 50, true);
 
-            uneBouteilleDeperrier.Ouvrir();
+            Console.WriteLine(uneBouteilleDeperrier.ToString());
+            Console.WriteLine(uneBouteilleDeCola.ToString());
+
+            uneBouteilleDeperrier.Ouvrir();            
 
             Console.WriteLine();
-            Console.WriteLine("données de Ouvrir ");
+            Console.WriteLine("données de bouteille de perrier Ouvrir ");
             Console.WriteLine(uneBouteilleDeperrier.ToString());
 
+            uneBouteilleDeCola.Ouvrir();
+
+            Console.WriteLine();
+            Console.WriteLine("données bouteille de Cola de Fermer ");
+            Console.WriteLine(uneBouteilleDeCola.ToString());
+
             uneBouteilleDeperrier.AOterEnLitre();
+            uneBouteilleDeCola.AOterEnLitre();
 
             Console.WriteLine();
             Console.WriteLine("données de AOterEnLitre ");
-            Console.WriteLine(uneBouteilleDeperrier.ToString());            
+            Console.WriteLine(uneBouteilleDeperrier.ToString());
+            Console.WriteLine(uneBouteilleDeCola.ToString());
 
             uneBouteilleDeperrier.ViderTout();
 
@@ -30,13 +42,19 @@ namespace ConsoleAppBouteille
             Console.WriteLine("données de ViderTout ");          
             Console.WriteLine(uneBouteilleDeperrier.ToString());
 
-            uneBouteilleDeperrier.Fermer();
+            //uneBouteilleDeperrier.Fermer();
+
+            //Console.WriteLine();
+            //Console.WriteLine("données de Fermer ");           
+            //Console.WriteLine(uneBouteilleDeperrier.ToString());
+
+            uneBouteilleDeperrier.RemplirEnPourcentage();
 
             Console.WriteLine();
-            Console.WriteLine("données de Fermer ");           
+            Console.WriteLine("données de Remplir En % ");
             Console.WriteLine(uneBouteilleDeperrier.ToString());
 
-            
+
 
         }
     }
