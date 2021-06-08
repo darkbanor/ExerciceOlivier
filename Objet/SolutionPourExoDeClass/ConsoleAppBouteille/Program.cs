@@ -1,5 +1,9 @@
-﻿using System;
-using ClassLibraryBouteille;
+﻿using ClassLibraryBouteille;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
 namespace ConsoleAppBouteille
 {
@@ -16,7 +20,7 @@ namespace ConsoleAppBouteille
             Console.WriteLine(uneBouteilleDeperrier.ToString());
             Console.WriteLine(uneBouteilleDeCola.ToString());
 
-            uneBouteilleDeperrier.Ouvrir();            
+            uneBouteilleDeperrier.Ouvrir();
 
             Console.WriteLine();
             Console.WriteLine("données de bouteille de perrier Ouvrir ");
@@ -39,7 +43,7 @@ namespace ConsoleAppBouteille
             uneBouteilleDeperrier.ViderTout();
 
             Console.WriteLine();
-            Console.WriteLine("données de ViderTout ");          
+            Console.WriteLine("données de ViderTout ");
             Console.WriteLine(uneBouteilleDeperrier.ToString());
 
             //uneBouteilleDeperrier.Fermer();
@@ -54,7 +58,15 @@ namespace ConsoleAppBouteille
             Console.WriteLine("données de Remplir En % ");
             Console.WriteLine(uneBouteilleDeperrier.ToString());
 
+            ////////////////////
+            ///
+            //Bouteille uneBouteilleDeperrier;
+            //uneBouteilleDeperrier = new Bouteille(1.5, 80, false);
 
+            //uneBouteilleDeperrier.Ouvrir();
+            //bool test = uneBouteilleDeperrier.Ouvrir();
+
+            //Assert.AreEqual(test, true);
 
         }
     }
