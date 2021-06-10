@@ -12,7 +12,7 @@ namespace ConsoleAppBouteille
         static void Main(string[] args)
         {
             Bouteille uneBouteilleDeperrier;
-            uneBouteilleDeperrier = new Bouteille(1.5, 80, false);
+            uneBouteilleDeperrier = new Bouteille(1.5, 80, true);
 
             Bouteille uneBouteilleDeCola;
             uneBouteilleDeCola = new Bouteille(2, 50, true);
@@ -36,9 +36,13 @@ namespace ConsoleAppBouteille
             uneBouteilleDeCola.AOterEnLitre();
 
             Console.WriteLine();
-            Console.WriteLine("données de AOterEnLitre ");
+            Console.WriteLine("A oter en litre ");
             Console.WriteLine(uneBouteilleDeperrier.ToString());
+            Console.WriteLine("on doit vider = " + uneBouteilleDeperrier.AOterEnLitre());
             Console.WriteLine(uneBouteilleDeCola.ToString());
+            Console.WriteLine("on doit vider = " + uneBouteilleDeCola.AOterEnLitre());
+            
+
 
             uneBouteilleDeperrier.ViderTout();
 
@@ -59,7 +63,7 @@ namespace ConsoleAppBouteille
             Console.WriteLine(uneBouteilleDeperrier.ToString());
 
             ////////////////////
-            ///
+            /// 
             //Bouteille uneBouteilleDeperrier;
             //uneBouteilleDeperrier = new Bouteille(1.5, 80, false);
 
@@ -67,6 +71,30 @@ namespace ConsoleAppBouteille
             //bool test = uneBouteilleDeperrier.Ouvrir();
 
             //Assert.AreEqual(test, true);
+
+            string sonStadeCourant = "papillon";
+
+            string[] evolution = { "oeuf", "chenille", "chrysalide", "papillon" };
+
+            string temp="papillon";
+
+
+           for (int i=0; i<evolution.Length; i++)
+            {
+                Console.WriteLine("tableau = " + evolution [i]);
+
+                if (sonStadeCourant == evolution [i] && sonStadeCourant != "papillon")
+                {
+                    //Console.WriteLine("dans boucle stade courant = " + evolution[i]);
+                    temp = evolution[i+1];
+                }
+                
+                
+            } 
+
+                Console.WriteLine("stade courant = " + sonStadeCourant + "stade evo = " + temp);
+
+            Console.ReadKey();
 
         }
     }

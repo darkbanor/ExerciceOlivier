@@ -63,9 +63,13 @@ namespace ClassLibraryBouteille
 
         public double ViderTout()
         {
+            
+
             if (ouvert == true)
             {
-                contenanceEnLitre = 0;
+                
+                //get(AOterEnLitre);
+               
                 contenuEnPourcentage = 0;
             }
             else
@@ -73,7 +77,7 @@ namespace ClassLibraryBouteille
                 throw new Exception("Impossible vider car bouteille est ferme");
             }
 
-            return contenanceEnLitre;
+            return contenuEnPourcentage;
 
         }
 
@@ -117,21 +121,20 @@ namespace ClassLibraryBouteille
 
         public double AOterEnLitre()
         {
-            double resteEnLitreAVider;
-            double pourcentage;
+            //double resteEnLitreAVider;
+            double pourcentage;            
 
             if (ouvert == true)
             {
                 pourcentage = (contenuEnPourcentage * contenanceEnLitre) / 100;
-                resteEnLitreAVider = contenanceEnLitre - pourcentage;
-                contenanceEnLitre = Math.Round(resteEnLitreAVider, 3);
+                //resteEnLitreAVider = Math.Round((contenanceEnLitre - pourcentage),3);                
             }
             else
             {
                 throw new Exception("Impossible vider car bouteille ferme");
             }
 
-            return contenanceEnLitre;
+            return pourcentage;
         }
 
 
