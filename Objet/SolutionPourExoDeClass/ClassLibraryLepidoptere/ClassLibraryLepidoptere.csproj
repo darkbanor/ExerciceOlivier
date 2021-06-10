@@ -41,8 +41,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Evolution\Chenille.cs" />
+    <Compile Include="Evolution\Chrysalide.cs" />
     <Compile Include="Lepidoptere.cs" />
+    <Compile Include="Evolution\Oeuf.cs" />
+    <Compile Include="Evolution\Papillon.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Evolution\StadeDEvolution.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ClassDiagram1.cd" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

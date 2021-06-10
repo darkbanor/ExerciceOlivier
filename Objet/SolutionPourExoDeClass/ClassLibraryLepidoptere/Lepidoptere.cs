@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ClassLibraryLepidoptere.Evolution;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,83 +7,46 @@ using System.Threading.Tasks;
 
 namespace ClassLibraryLepidoptere
 {
-    class Lepidoptere 
+    public class Lepidoptere 
     {
         //attribut = field (champs)
-        private string nom;
-        private string sonStadeCourant;
+        string nom;
+        StadeDEvolution stadeCourant;
 
         //constructeur
-        public Lepidoptere() // contructeur defaut
-        {
-            nom = "PapillonVert";
-            sonStadeCourant = "oeuf";
-        }
-
-        public Lepidoptere(string _nom, string _sonStadeCourant)
+        public Lepidoptere(string _nom) // contructeur defaut
         {
             nom = _nom;
-            sonStadeCourant = _sonStadeCourant;
+            stadeCourant = new Oeuf();
         }
 
         public void SeDeplacer()
         {
-            return;
+            stadeCourant.SeDeplacer();
         }
 
-        public void SeTransformer()
+        public void SeTransformerObjet()
         {
-            
-            string[] evolution = { "oeuf", "chenille", "chrysalide", "papillon" };
-
-            string temp = "papillon";
-
-
-            for (int i = 0; i < evolution.Length; i++)
-            {
-                Console.WriteLine("tableau = " + evolution[i]);
-
-                if (sonStadeCourant == evolution[i] && sonStadeCourant != "papillon")
-                {
-                    //Console.WriteLine("dans boucle stade courant = " + evolution[i]);
-                    temp = evolution[i + 1];
-                }
-
-
-            }
-            sonStadeCourant = temp;
-
+            stadeCourant = stadeCourant.DonnerProchainStade(); 
         }
 
-        //public void SeDeplacer()
+        //public void SeTransformerAlgo()
         //{
-        //    string deplacement = sonStadeCourant;
-
-        //    if (deplacement == "oeuf")
+        //    if (stadeCourant is Oeuf)
         //    {
-        //        Console.WriteLine("je ne sais pas me deplacer tout seul");
-
+        //        stadeCourant = new Chenille();
         //    }
-        //    else if (deplacement == "chenille")
+        //    else if (stadeCourant is Chenille)
         //    {
-        //        Console.WriteLine("je rampe");
-
+        //        stadeCourant = new Chrysalide();
         //    }
-        //    else if (deplacement == "chrysalide")
-        //    {
-        //        Console.WriteLine("je ne sais pas me deplacer tout seul");
-
-        //    }
-        //    else if (deplacement == "papillon")
-        //    {
-        //        Console.WriteLine("je vole");
-
-        //    }
-        //    return deplacement;
-
         //}
 
-        
+       
+        public override string ToString() // pour tester
+        {
+            return "Nom = " + nom + " Son stade courant = " + stadeCourant;
+        }
 
 
     }

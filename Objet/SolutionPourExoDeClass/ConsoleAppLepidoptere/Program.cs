@@ -12,10 +12,21 @@ namespace ConsoleAppLepidoptere
     {
         static void Main(string[] args)
         {
-            Lepidoptere unPapillon;
-            unPapillon = new Lepidoptere("papillovert", "oeuf");
+            Lepidoptere gargouille;
+            gargouille = new Lepidoptere("Garf");
 
-            
+            gargouille.SeDeplacer();
+
+            Console.WriteLine(gargouille.ToString());
+
+            gargouille.SeTransformerObjet();
+
+            Console.WriteLine(gargouille.ToString());   
+
+
+
+
+            Console.ReadKey();
         }
     }
 }
