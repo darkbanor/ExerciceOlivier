@@ -16,9 +16,10 @@ namespace UnitTestProjectLepidoptere
 
             //act
             test.SeTransformerObjet();
+            string verif = test.SeTransformerObjet();
 
             //assert
-            Assert.AreEqual(test, "chenille");
+            StringAssert.Contains( (test.SeTransformerObjet());), "chenille") ;
            
         }
     }
