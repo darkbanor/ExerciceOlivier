@@ -10,5 +10,10 @@ namespace ClassLibraryLepidoptere.Evolution
         public abstract void SeDeplacer();
         public abstract StadeDEvolution DonnerProchainStade();
 
+        public override string ToString()
+        {
+            return base.ToString();
+        }
+
     }
 }

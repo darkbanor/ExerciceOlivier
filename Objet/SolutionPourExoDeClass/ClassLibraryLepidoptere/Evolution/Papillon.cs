@@ -7,14 +7,20 @@ namespace ClassLibraryLepidoptere.Evolution
 {
     public class Papillon : StadeDEvolution
     {
+        const int poids = 2;
         public override StadeDEvolution DonnerProchainStade()
         {
-            return new Papillon();
+            return this;
         }
 
         public override void SeDeplacer()
         {
             Console.WriteLine("Je vole");
+        }
+
+        public override string ToString()
+        {
+            return base.ToString() +poids;
         }
     }
 }
