@@ -8,34 +8,75 @@ namespace ClassLibraryVoiture
 {
     public class Voiture
     {
-        private decimal compteurEnKm;
-        private Moteur moteur;
-        private Dictionary<string, Roue> mesRoues = new Dictionary<string, Roue>();
+        private int compteurEnKm;
+        private Moteur monMoteur;
+        private List<Roue> mesRoues;
+
+        public Voiture()
+            :this(0, new List<Roue>() {new Roue(), new Roue(), new Roue(), new Roue() }, new Moteur())
+        {
+
+        }
+
+        private Voiture(int compteurEnKm, List<Roue> mesRoues, Moteur monMoteur)
+        {
+            this.compteurEnKm = compteurEnKm;
+            this.monMoteur = monMoteur;
+            this.mesRoues = mesRoues;
+        }
         
-        public Voiture (decimal _compteurEnKm, Moteur _moteur) // contructeur defaut
+        public Voiture (int compteurEnKm, bool tourne, int diametre, bool estDemarre, int nbCV) // contructeur defaut
+        :this(compteurEnKm,
+             new List<Roue>() {new Roue (tourne, diametre), new Roue(tourne, diametre), 
+             new Roue(tourne, diametre), new Roue(tourne, diametre) }, new Moteur(estDemarre, nbCV))
         {
-            compteurEnKm = _compteurEnKm;
-            moteur = _moteur;
-            mesRoues.Add("roueMotriceAvtGauche", new Roue());
-            mesRoues.Add("roueMotriceAvtDroit", new Roue());
-            mesRoues.Add("roueArrGauche", new Roue());
-            mesRoues.Add("roueArrDroit", new Roue());
+
+
+            //pour les roues
+            //this.mesRoues = new List<Roue>();
+            //this.mesRoues.Add(new Roue(_voitureARecopier.mesRoues[0]));
+            //this.mesRoues.Add(new Roue(_voitureARecopier.mesRoues[1]));
+            //this.mesRoues.Add(new Roue(_voitureARecopier.mesRoues[2]));
+            //this.mesRoues.Add(new Roue(_voitureARecopier.mesRoues[3]));
+
+            //pour monMonteur
+            //this.monMoteur = new Moteur(estDemarre, nbCV);
 
         }
 
-        public void Arreter()
+        public bool Avancer()
         {
-            throw new System.NotImplementedException();
+            return monMoteur.EntrainerRoues(mesRoues[0], mesRoues[1], mesRoues[2], mesRoues[3]);
         }
 
-        public void Avancer()
+        public Voiture(Voiture _voitureARecopier)
         {
-            throw new System.NotImplementedException();
+            //pour le compteur
+            this.compteurEnKm = _voitureARecopier.compteurEnKm;
+            
+            // faux car même roue partout
+            //this.mesRoues = _voitureARecopier.mesRoues:
+
+            //pour les roues
+            this.mesRoues = new List<Roue>();
+            this.mesRoues.Add(new Roue(_voitureARecopier.mesRoues[0]));
+            this.mesRoues.Add(new Roue(_voitureARecopier.mesRoues[1]));
+            this.mesRoues.Add(new Roue(_voitureARecopier.mesRoues[2]));
+            this.mesRoues.Add(new Roue(_voitureARecopier.mesRoues[3]));
+
+            //pour monMonteur
+            this.monMoteur = new Moteur(_voitureARecopier.monMoteur);
+
         }
 
-        public void Demarrer()
+        public bool Arreter()
         {
-            throw new System.NotImplementedException();
+            return monMoteur.ArreterRoues(mesRoues[0], mesRoues[1], mesRoues[2], mesRoues[3]);
+        }        
+
+        public bool Demarrer()
+        {
+            return monMoteur.Demarrer();
         }
     }
 }
