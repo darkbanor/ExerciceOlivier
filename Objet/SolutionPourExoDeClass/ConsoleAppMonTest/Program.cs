@@ -21,6 +21,8 @@ namespace ConsoleAppMonTest
             Console.WriteLine(laTeleDuSalon.ToString());
             Console.WriteLine(laTeleDuSalon2.ToString());
 
+            Console.ReadKey();
+
         }
     }
 }
