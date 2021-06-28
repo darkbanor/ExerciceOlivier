@@ -13,34 +13,33 @@ namespace ConsoleAppPointGeo
         {
             //cree premier coordonnee par defaut
             Point ncoor = new Point();
+            Point ncoorClone = new Point(ncoor);
 
             //afficher ncoor
             Console.WriteLine("Absisse X,  Ordonnee Y");
             Console.WriteLine(ncoor.ToString());
+            Console.WriteLine("Clone du point : " + ncoorClone.ToString());
 
             //deplacer Point
-            ncoor.Deplacer(1, 2);
+            ncoor.Deplacer(5, 12);
 
             //afficher ncoor
-            Console.WriteLine("nouveau coordonnee : Absisse X,  Ordonnee Y");
+            Console.WriteLine("nouveau coordonnee apres deplacement: ");
             Console.WriteLine(ncoor.ToString());
 
-            ncoor.SymetrieAxeOrigine();
+            ncoor.SymetrieAxeAbsisse();
+            Console.WriteLine("Symetrie axe Absisse : "+ncoor.SymetrieAxeAbsisse());
 
-            Console.WriteLine("Symetrie axe Origine : ");
-            Console.WriteLine(ncoor.ToString());
+            ncoor.SymetrieAxeOrdonnee();
+            Console.WriteLine("Symetrie axe Ordonnee : " + ncoor.SymetrieAxeOrdonnee());
 
-            ncoor.SymetrieAxeOrigine();
-            Console.WriteLine(ncoor.ToString());
+            
+            Point nouveauPointSymetriqueOrigine  = ncoor.SymetrieAxeOrigine();
+
+            Console.WriteLine("Symetrie axe Origine : "+ nouveauPointSymetriqueOrigine.ToString());
 
             ncoor.Permuter();
-            Console.WriteLine("Permutation  : ");
-            Console.WriteLine(ncoor.ToString());
-
-
-
-
-
+            Console.WriteLine("Permutation  : " + ncoor.ToString());
 
 
 

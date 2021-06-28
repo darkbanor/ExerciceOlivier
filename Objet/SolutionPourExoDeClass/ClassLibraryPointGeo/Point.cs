@@ -23,10 +23,15 @@ namespace ClassLibraryPointGeo
             y = _ordonneeY;
         }
 
-        public Point(Point _point)
+        public Point(Point _point) // ?????
         {
-            throw new System.NotImplementedException();
+            x = _point.x;
+            
+            //idem pour y
+            y = _point.y;
+
         }
+
         public void Deplacer(float _nouveauX, float _nouveauY)
         {
             x = _nouveauX;
@@ -35,29 +40,25 @@ namespace ClassLibraryPointGeo
 
         public void Permuter()
         {
-            if (y > 0 && x > 0) //bissectile y0 et x0
-            {
-                float temp = x;
-                x = y;
-                y = temp;
-            }
-            
+            float temp = x;
+            x = y;
+            y = temp;
         }
 
-        public void SymetrieAxeAbsisse()
+        public Point SymetrieAxeAbsisse()
         {
-            y = -y;
+            return new Point(x, -y);
         }
 
-        public void SymetrieAxeOrdonnee()
+        public Point SymetrieAxeOrdonnee()
         {
-            x = -x;
+            return new Point(-x, y);
         }
 
-        public void SymetrieAxeOrigine()
+        public Point SymetrieAxeOrigine()
         {
-            y = -y;
-            x = -x;
+            return new Point(-x, -y);
+            //return new Point ((this.Point SymetrieAxeAbsisse()), (this.Point SymetrieAxeOrdonnee()));
         }
 
         // sert a afficher les données
