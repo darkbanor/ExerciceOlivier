@@ -23,7 +23,7 @@ namespace ClassLibraryPointGeo
             y = _ordonneeY;
         }
 
-        public Point(Point _point) // ?????
+        public Point(Point _point) // clonage
         {
             x = _point.x;
             

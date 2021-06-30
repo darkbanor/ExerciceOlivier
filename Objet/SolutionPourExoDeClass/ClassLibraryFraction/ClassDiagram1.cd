@@ -1,11 +1,12 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="FullSignature">
   <Class Name="ClassLibraryFraction.Fraction">
-    <Position X="4.25" Y="1" Width="3.25" />
+    <Position X="4" Y="0.5" Width="3.25" />
     <TypeIdentifier>
-      <HashCode>AAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAA=</HashCode>
+      <HashCode>IABAQAAAIAAAAAQEAAIAAAAAAAAIACAiADAAAAEAMAA=</HashCode>
       <FileName>Fraction.cs</FileName>
     </TypeIdentifier>
+    <Lollipop Position="0.2" />
   </Class>
   <Font Name="Segoe UI" Size="9" />
 </ClassDiagram>
