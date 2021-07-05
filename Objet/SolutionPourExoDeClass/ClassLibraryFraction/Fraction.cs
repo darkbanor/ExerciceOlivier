@@ -25,12 +25,14 @@ namespace ClassLibraryFraction
 
         public Fraction(int _numérateur, int _denominateur) //constructeur par defaut
         {
+            
+            numerateur = _numérateur;
+            denominateur = _denominateur;
+
             if (denominateur == 0)
             {
                 throw new ArithmeticException("Le denominateur de la fraction ne peut pas être égal à zéro");
             }
-            numerateur = _numérateur;
-            denominateur = _denominateur;
         }
 
         public Fraction(int _numérateur) //constructeur pour null
@@ -103,17 +105,9 @@ namespace ClassLibraryFraction
         }
 
         //argumet et signature -- surcharge
-        public Fraction FPlus(Fraction _f1, Fraction _f2)
-        {
-            int numerateur1 = ((_f1.numerateur * _f2.denominateur) +
-                (_f1.denominateur * _f2.numerateur));
-            int denominateur1 = _f1.denominateur * _f2.denominateur;
-            
-            Fraction f = new Fraction(numerateur1, denominateur1);
-
-            f.Reduire();
-            f.invSigneDenominateur(); // pour inverser le signe
-            return f;
+        public static Fraction operator+(Fraction a, Fraction b)
+        { 
+          return a.Plus(b);
         }
 
         public Fraction Moins(Fraction _autreFraction)
@@ -147,24 +141,8 @@ namespace ClassLibraryFraction
             return f;
 
         }
-        public override string ToString()
-        {
-            string frac = "";
 
-            if (denominateur == 1)
-            {
-                frac = numerateur + "";
-            }
-            else
-            {
-                frac = numerateur + "/" + denominateur;
-            }
-
-
-            return frac;
-        }
-
- /*       public void Reduire() // autre methode de réduction (algo)
+ /*     public void Reduire() // autre methode de réduction (algo)
         {
             int a;
             int b;
@@ -189,10 +167,6 @@ namespace ClassLibraryFraction
 
             this.numerateur /=b;
             this.denominateur /= b;
-
-
-
-
 
        } */
 
@@ -266,10 +240,27 @@ namespace ClassLibraryFraction
             //autre comparaison
             if (_autreFraction == null)
             {
-                throw new ArgumentException("Obj n'est pas du type Resultat");
+                throw new ArgumentException("Obj n'est pas du type methode GetValue ..");
             }
 
             return this.GetValue().CompareTo(_autreFraction.GetValue());
+        }
+
+        public override string ToString()
+        {
+            string frac = "";
+
+            if (denominateur == 1)
+            {
+                frac = numerateur + "";
+            }
+            else
+            {
+                frac = numerateur + "/" + denominateur;
+            }
+
+
+            return frac;
         }
     }
 

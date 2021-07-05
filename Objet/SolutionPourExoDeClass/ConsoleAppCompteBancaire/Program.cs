@@ -104,6 +104,15 @@ namespace ConsoleAppCompteBancaire
                 Console.WriteLine("résultat = inferieur");
             }
 
+            List<Compte> listeCompte = new List<Compte>();
+            listeCompte.Add(c2);
+            listeCompte.Add(c3);
+            listeCompte.Add(c4);
+            listeCompte.Add(c5);
+            foreach (Compte result in listeCompte)
+            Console.WriteLine(result.ToString());
+
+
 
             Console.ReadKey();
         }

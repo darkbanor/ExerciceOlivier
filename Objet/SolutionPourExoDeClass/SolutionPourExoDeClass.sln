@@ -58,6 +58,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClassLibraryFraction", "Cla
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleAppFraction", "ConsoleAppFraction\ConsoleAppFraction.csproj", "{C8E2BBBA-381D-4CAA-B7C8-F7FD62C365B1}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleAppBanque", "ConsoleAppBanque\ConsoleAppBanque.csproj", "{B5841AFE-BCF9-4E53-8F30-9FFF9423C6EF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -136,6 +138,10 @@ Global
 		{C8E2BBBA-381D-4CAA-B7C8-F7FD62C365B1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C8E2BBBA-381D-4CAA-B7C8-F7FD62C365B1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C8E2BBBA-381D-4CAA-B7C8-F7FD62C365B1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B5841AFE-BCF9-4E53-8F30-9FFF9423C6EF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B5841AFE-BCF9-4E53-8F30-9FFF9423C6EF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B5841AFE-BCF9-4E53-8F30-9FFF9423C6EF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B5841AFE-BCF9-4E53-8F30-9FFF9423C6EF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -159,6 +165,7 @@ Global
 		{371C34EF-9220-4804-B610-5E3A2B4522D0} = {C2E8C975-FCE9-4A63-9A46-BC93B3E20BC3}
 		{1DA092EB-760C-46F3-A75C-C2B10867D28D} = {9016453A-C2F8-421E-8E3A-83C1FDD65133}
 		{C8E2BBBA-381D-4CAA-B7C8-F7FD62C365B1} = {9016453A-C2F8-421E-8E3A-83C1FDD65133}
+		{B5841AFE-BCF9-4E53-8F30-9FFF9423C6EF} = {614E9A22-A96C-4DB5-927C-2D79F571DDCE}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {D6E3655F-94EF-4098-9BAC-45920F52A55D}
