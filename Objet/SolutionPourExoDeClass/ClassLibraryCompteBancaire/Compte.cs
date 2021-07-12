@@ -6,28 +6,34 @@ using System.Threading.Tasks;
 
 namespace ClassLibraryCompteBancaire
 {
-    public class Compte
+    public class Compte:IComparable<Compte>
     {
-        private int decouvertAutorise;
         private string nom;
         private int numero;
         private int solde;
+        private int decouvertAutorise;
 
         public Compte() //constructeur par defaut
         {
             //pour exo le constructeur = zero (=commenté)
-            //decouvertAutorise = -150;
-            //nom = "Olivier";
-            //numero = 123456;
-            //solde = 1000;
+            nom = "";
+            numero = 0;
+            solde = 0;
+            decouvertAutorise = 0;
         }
 
-        public Compte(string _nom, int _numero, int _solde, int _decouvertAutorise)
+        public Compte(int _numero, string _nom, int _solde, int _decouvertAutorise)
         {
             nom = _nom;
             numero = _numero;
             solde = _solde;
             decouvertAutorise = _decouvertAutorise;
+        }
+
+        public int NumCompte 
+        {
+            get => numero;
+
         }
 
         public void Crediter(int _montant)
@@ -84,11 +90,17 @@ namespace ClassLibraryCompteBancaire
         // sert a afficher les données
         public override string ToString()
         {
-            return " nom = " + nom + " numero de compte = "+ numero  +
-                " solde = " + solde + " Decouvert Autorise = " + decouvertAutorise;
+            return "nom = " + nom + ", numero de compte = "+ numero  +
+                ", solde = " + solde + ", Decouvert Autorise = " + decouvertAutorise + "\n";
         }
 
-        
+        //compare les soldes des comptes grace à Icompare
+        public int CompareTo(Compte other)
+        {
+            //this.solde.CompareTo(other.solde);
+
+            return this.solde.CompareTo(other.solde);
+        }
     }
 }
 

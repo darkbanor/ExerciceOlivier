@@ -12,37 +12,130 @@ namespace ClassLibraryCompteBancaire
         private string nom;
         private string ville;
 
-        private Banque(string _nom, string _ville) // constructeur
+        public Compte[] MesComptes
         {
-            nbComptes++;
+            get => mesComptes;
+
+        }
+
+        public Banque(string _nom, string _ville) // constructeur
+        {
+            mesComptes = new Compte[200];
+            nbComptes = 0;
             nom = _nom;
             ville = _ville;
-            Compte[] mesComptes = new Compte[] {};
         }
 
         public Banque() // constructeur par defaut
         {
-            Compte[] mesComptes = new Compte[] { };
+            mesComptes = new Compte[200];
             nbComptes = 0;
             nom = "";
             ville = "";
         }
 
-        private void AjouteCompte(Compte unCompte)
+        public void AjouterCompte(Compte unCompte)
         {
+            mesComptes[nbComptes] = unCompte;
+            nbComptes++;
         }
 
-        public void AjouterCompte(string _nom, int _num, int _solde, int _decouvertAutoriser)
+        public void AjouterCompte(int _num, string _nom, int _solde, int _decouvertAutoriser)
         {
-            Compte unCompte = new Compte(_nom, _num, _solde, _decouvertAutoriser);
-          
+            Compte unCompte = new Compte(_num, _nom, _solde, _decouvertAutoriser);
+            mesComptes[nbComptes] = unCompte;
+            nbComptes++;
         }
+
+        public Compte CompteSup()
+        {
+            
+            List<Compte> mescomptesList = new List<Compte>();
+
+            foreach (Compte c in mesComptes)
+            {
+                if (c != null)
+                {
+                    mescomptesList.Add(c);
+                }
+            }
+            
+            if (mesComptes != null)
+            {                
+               mescomptesList.Sort();
+               mescomptesList.Reverse();
+
+                if (mescomptesList.Count != 0)
+                {
+
+                    return mescomptesList[0];
+                }
+                else
+                {
+                    return null;
+                }
+                
+            }
+            else
+            {
+               throw new IndexOutOfRangeException("..fin des champs remplis.. "); 
+            }
+
+        }
+        public bool Transferer(int _compteSource, int _compteDestination, int _montantTransfert)
+        {
+            bool ok = false;
+
+            CpmSource=this.RendCompte(_compteSource);
+            CpmDestination=this.RendCompte(_compteDestination);
+
+            //on regarde si le compte courant peut etre debiter
+            if (CpmSource.Debiter(_montantTransfert))
+            {
+                //si on peut debiter on credite le nouveau compte                 
+                CpmDestination.Crediter(_montantTransfert);
+
+                ok = true;
+
+            }
+
+            return ok;
+
+        }
+        public Compte RendCompte(int num)
+        {
+            int i = 0;
+            while (i < nbComptes && num != mesComptes[i].NumCompte)
+            {
+                i++;
+               
+            }
+
+            if (i==nbComptes)
+            {
+                return null;
+                
+            }
+            else
+            {
+                return mesComptes[i];
+            }
+                
+
+        }
+
 
         public override string ToString()
         {
-            return " nom = " + nom + " nombre de compte = " + nbComptes +
-                " ville = " + ville;
-            //for mesComptes
+            string affichecompte = "";
+
+            for (int i = 0; i <= nbComptes; i++)
+            {
+                affichecompte += this.mesComptes[i];
+            }
+
+            return "Nom de la Banque = " + nom + ", ville = " + ville + ", nombre de compte = " + nbComptes + "\n" + affichecompte;
+
         }
 
     }
