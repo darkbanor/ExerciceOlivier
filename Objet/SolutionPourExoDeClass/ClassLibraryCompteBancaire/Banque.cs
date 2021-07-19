@@ -86,8 +86,8 @@ namespace ClassLibraryCompteBancaire
         {
             bool ok = false;
 
-            CpmSource=this.RendCompte(_compteSource);
-            CpmDestination=this.RendCompte(_compteDestination);
+            Compte CpmSource=RendCompte(_compteSource);
+            Compte CpmDestination=RendCompte(_compteDestination);
 
             //on regarde si le compte courant peut etre debiter
             if (CpmSource.Debiter(_montantTransfert))

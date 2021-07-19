@@ -11,7 +11,7 @@ namespace ConsoleAppBanque
     {
         static void Main(string[] args)
         {
-            
+
             //List<Compte> mesComptes = new List<Compte>();
             //Compte lise = new Compte(1568, "lise", 1000, 300);
             //Compte elisa = new Compte(2548, "elisa", 2100, 300);
@@ -24,6 +24,7 @@ namespace ConsoleAppBanque
             //Console.WriteLine("lise compareTo Lisa (-1 inferieur, 0 egal, 1 superieur) = " + r.ToString());
             //Console.WriteLine();
 
+            Console.OutputEncoding = Encoding.UTF8;
 
             Banque b = new Banque("Credit mumut", "Mulhouse");
             b.AjouterCompte(1251, "Robert", 1000, 300);
@@ -55,8 +56,20 @@ namespace ConsoleAppBanque
 
             Console.WriteLine();
             Banque c = new Banque("Banque Pop", "Colmar");
-            c.AjouterCompte(5412, "Francois", 1500, 500);
+            c.AjouterCompte(1245, "Francois", 2000, 300);
+            c.AjouterCompte(2568, "Denis", 1000, 300);
 
+            if (c.Transferer(1245, 2568, 1000))
+            {
+                Console.WriteLine("transfert effectué");
+            }
+            else
+            {
+                Console.WriteLine("tranfert impossible");
+            }
+            bool resultat = c.Transferer(1245, 2568, 5000);
+
+            Console.WriteLine("Résultat de transfert 5000 ="+resultat);
             Console.WriteLine(c.ToString());
 
             Console.ReadKey();

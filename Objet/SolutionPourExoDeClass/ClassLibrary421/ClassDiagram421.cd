@@ -3,23 +3,27 @@
   <Class Name="ClassLibrary421.De">
     <Position X="1.75" Y="1" Width="1.75" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAABAAAAAAAAAAACAAIAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAQAAAQAAAAAAAAIAAAACAAIAAAAAAAAAAA=</HashCode>
       <FileName>De.cs</FileName>
     </TypeIdentifier>
+    <Lollipop Position="0.2" />
   </Class>
   <Class Name="ClassLibrary421.Partie">
-    <Position X="7.5" Y="2.25" Width="1.5" />
+    <Position X="8.5" Y="1.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Partie.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="ClassLibrary421.Manche">
-    <Position X="5.25" Y="0.75" Width="1.5" />
+    <Position X="5.25" Y="1" Width="2" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAEAAAAABAAAAAUAAAAAAAgAgAAAAAAAAAAAAAAECA=</HashCode>
       <FileName>Manche.cs</FileName>
     </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Field Name="mes3Des" />
+    </ShowAsCollectionAssociation>
   </Class>
   <Font Name="Segoe UI" Size="9" />
 </ClassDiagram>
